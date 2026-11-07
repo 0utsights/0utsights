@@ -1,7 +1,7 @@
 # Enable live tracking
 
 1. Create or sign in to your account at https://wakatime.com/.
-2. Install the WakaTime integrations for the editors and AI tools you use: https://wakatime.com/plugins. Connect all of them to the same account so both handwritten and AI activity are represented.
+2. The Neovim and Codex CLI plugins are installed on this computer. Restart Neovim, run `:WakaTimeApiKey`, and enter your key. This saves the shared `~/.wakatime.cfg` used by both plugins. Start a new Codex session to load its plugin. Setup references: https://wakatime.com/neovim and https://wakatime.com/codex-cli.
 3. Copy your API key from https://wakatime.com/settings/api-key and save it as the repository Actions secret `WAKATIME_API_KEY`: https://github.com/0utsights/0utsights/settings/secrets/actions/new. Do not commit it or paste it into chat.
 4. Record some coding activity and verify it in your WakaTime dashboard.
 5. Run **Update coding accountability** from https://github.com/0utsights/0utsights/actions. It also runs daily at 06:23 UTC.
