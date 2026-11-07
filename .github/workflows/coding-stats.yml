@@ -1,4 +1,4 @@
-name: Update coding accountability
+name: Update coding stats
 
 on:
   schedule:

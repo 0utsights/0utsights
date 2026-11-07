@@ -1,13 +1,13 @@
 # Hi, I'm John
 
-## Coding accountability
+## Behind the code
 
-I'm tracking my coding activity and AI use to stay accountable for the work I do and the skills I build.
+My week in code — languages, tools, and a look at how I work with AI.
 
-The stats below show tracked coding time, AI coding activity, and AI-written versus handwritten lines. Time and line counts measure different things: editor activity isn't necessarily unaided coding, and lines written aren't a measure of understanding or code quality. Activity outside connected tools isn't included.
+**In my toolkit:** Neovim · Codex
 
 <!--START_SECTION:waka-->
-Tracking setup in progress. Live stats will appear after WakaTime is connected and activity is recorded.
+*Coding stats coming soon.*
 <!--END_SECTION:waka-->
 
-Updated daily using [WakaTime](https://wakatime.com/) and [waka-readme-stats](https://github.com/anmol098/waka-readme-stats). Inspired by [Eric-Song-Nop](https://github.com/Eric-Song-Nop).
+<sub>Updated daily via [WakaTime](https://wakatime.com/). Stats reflect activity recorded by connected tools.</sub>
