@@ -1,0 +1,55 @@
+name: Update coding accountability
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coding-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+    steps:
+      - name: Check tracking setup
+        id: setup
+        shell: bash
+        run: |
+          if [ -n "$WAKATIME_API_KEY" ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'Add the WAKATIME_API_KEY repository secret to enable live stats.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Update profile stats
+        if: steps.setup.outputs.ready == 'true'
+        uses: anmol098/waka-readme-stats@master
+        env:
+          INPUT_GH_USER: ${{ github.repository_owner }}
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHOW_TOTAL_CODE_TIME: 'True'
+          SHOW_AI_CODE_TIME: 'True'
+          SHOW_AI_CODING: 'True'
+          SHOW_LANGUAGE: 'True'
+          SHOW_EDITORS: 'True'
+          SHOW_UPDATED_DATE: 'True'
+          SHOW_PROJECTS: 'False'
+          SHOW_OS: 'False'
+          SHOW_TIMEZONE: 'False'
+          SHOW_COMMIT: 'False'
+          SHOW_DAYS_OF_WEEK: 'False'
+          SHOW_PROFILE_VIEWS: 'False'
+          SHOW_SHORT_INFO: 'False'
+          SHOW_LANGUAGE_PER_REPO: 'False'
+          SHOW_LOC_CHART: 'False'
+          SHOW_LINES_OF_CODE: 'False'
+          MAX_REPOS: '1'
